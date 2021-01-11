@@ -1,6 +1,5 @@
 from itertools import permutations
 
-
 def solution(numbers):
     answer = 0
     lists = []
