@@ -1,6 +1,3 @@
-import itertools
-
-
 def solution():
     num = 1
     coins = list(map(int, "1 2 3 1 9".split(" ")))
@@ -12,6 +9,5 @@ def solution():
         num += coin
 
     print(num)
-
 
 solution()

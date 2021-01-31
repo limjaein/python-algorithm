@@ -25,6 +25,7 @@ def solution(food_times, k):
     if length == 0:  # 런타임 에러
         return -1
 
+    # 시간 초과
     prev += int(k/length)
     k %= length
     i = 0
