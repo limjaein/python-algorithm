@@ -2,11 +2,7 @@
 # 상 0 우 1 하 2 좌 3
 from collections import deque
 
-dy = []
-dx = []
-
 def Solution():
-    global dy, dx
     dy = [-1, 0, 1, 0]
     dx = [0, 1, 0, -1]
 
@@ -50,9 +46,9 @@ def Solution():
 
         # 방향 전환 시기 체크
         if time == next_time:
-            if next_dir == 'L': dir = (dir + 3) % 4
-            elif next_dir == 'D': dir = (dir + 1) % 4
-            if len(directions) > 0: next_time, next_dir = directions.popleft()
+            if next_dir == 'L':  dir = (dir + 3) % 4
+            elif next_dir == 'D':  dir = (dir + 1) % 4
+            if len(directions) > 0:  next_time, next_dir = directions.popleft()
             else: next_time = -1
         time += 1
 
