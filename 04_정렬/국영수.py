@@ -1,5 +1,3 @@
-#0511
-
 N = int(input())
 students = list()
 result = list()
