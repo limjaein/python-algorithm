@@ -21,7 +21,6 @@ def solution():
                 tmp[idx] = up[idx] + down[idx]
             elif idx == len(down) - 1:
                 tmp[idx] = up[idx-1] + down[idx]
-        tmp[-1] = up[-1] + down[-1]
 
         up = copy.deepcopy(tmp)
 
