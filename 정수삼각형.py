@@ -12,7 +12,7 @@ def solution():
 
     for i in range(1, n):
         down = list(map(int, input().split()))
-        tmp = [0] * (len(down) + 1)
+        tmp = [0] * len(down)
 
         for idx, u in enumerate(down):
             if idx != 0 and idx != len(down) - 1:
@@ -21,6 +21,8 @@ def solution():
                 tmp[idx] = up[idx] + down[idx]
             elif idx == len(down) - 1:
                 tmp[idx] = up[idx-1] + down[idx]
+
+        print(tmp)
 
         up = copy.deepcopy(tmp)
 
