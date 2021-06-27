@@ -1,7 +1,7 @@
 
 n = int(input())
 m = int(input())
-busCharge = [[1e9] * n for _ in range(n)]
+busCharge = [[100] * n for _ in range(n)]
 
 for i in range(m):
     a, b, c = list(map(int, input().split()))
@@ -14,9 +14,12 @@ for k in range(n):
     for i in range(n):
         for j in range(n):
             busCharge[i][j] = min(busCharge[i][j], busCharge[i][k] + busCharge[k][j])
+    print(busCharge)
 
 for i in range(n):
     row = ""
     for j in range(n):
         row += str(busCharge[i][j]) + " "
-    print(row)
+    #print(row)
+    
+

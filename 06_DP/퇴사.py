@@ -20,3 +20,12 @@ def makePlan(idx, sum):
     return maxProfit
 
 print(makePlan(0, 0))
+
+
+import queue
+
+q = queue.Queue
+
+q.put()
+q.get()
+
