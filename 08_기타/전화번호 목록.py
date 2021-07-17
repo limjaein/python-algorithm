@@ -1,43 +1,36 @@
+class Node:
+    def __init__(self, key):
+        self.key = key
+        self.child = dict()
+        self.count = 0
 
 
 class Trie:
     def __init__(self):
-        # 한 글자씩 탐색위해 map 형태로 설정
-        self.child = dict()
-        # 단어 개수 카운트
-        self.count = 0
+        self.head = Node(None)
 
     def insert(self, word):
-        # 루트를 현재 포인터로 설정
-        cur = self
+        cur = self.head     # 루트를 현재 포인터로 설정
 
         for ch in word:
-            # 한 단어 추가될 것이므로 노드 카운트 + 1
-            cur.count += 1
+            cur.count += 1      # 한 단어 추가될 것이므로 카운트 + 1
 
             # 만약 ch가 없다면
             if ch not in cur.child:
-                # 해당 ch를 자식 Trie 노드로 생성
-                cur.child[ch] = Trie()
+                cur.child[ch] = Node(ch)    # ch를 key로 갖는 자식 Node 생성
+            cur = cur.child[ch]     # 자식 노드로 현재 포인터 이동
 
-            # 자식 노드로 현재 포인터 이동
-            cur = cur.child[ch]
-
-        # 마지막 노드 카운트 + 1
-        cur.count += 1
+        cur.count += 1      # 마지막 노드 카운트 + 1
 
     def search(self, word):
-        # 루트를 현재 포인터로 설정
-        cur = self
+        cur = self.head     # 루트를 현재 포인터로 설정
 
         for ch in word:
 
             # 만약 ch가 없다면
             if ch not in cur.child:
                 return 0
-
-            # 자식 노드로 현재 포인터 이동
-            cur = cur.child[ch]
+            cur = cur.child[ch]     # 자식 노드로 현재 포인터 이동
 
         # 현재 노드까지의 카운트 리턴
         return cur.count
