@@ -14,12 +14,10 @@ for k in range(n):
     for i in range(n):
         for j in range(n):
             busCharge[i][j] = min(busCharge[i][j], busCharge[i][k] + busCharge[k][j])
-    print(busCharge)
 
 for i in range(n):
     row = ""
     for j in range(n):
         row += str(busCharge[i][j]) + " "
-    #print(row)
     
 
