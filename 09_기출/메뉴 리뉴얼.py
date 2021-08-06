@@ -3,11 +3,11 @@ import heapq
 
 MAX_CNT_MENU_IN_COURSE = 10
 
+
 def solution(orders, course):
     answer = []
     courses = dict()    # 조합 가능한 코스 메뉴
     hq = [[] for _ in range(MAX_CNT_MENU_IN_COURSE + 1)]
-
 
     for order in orders:
         for menu_cnt in course:
