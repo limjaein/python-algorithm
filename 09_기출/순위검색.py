@@ -1,4 +1,3 @@
-import heapq
 from bisect import bisect_left
 
 
@@ -17,7 +16,9 @@ def solution(info, query):
 
 class Trie:
     def __init__(self):
+        # 조건을 child로 연결
         self.child = dict()
+        # 점수 저장 배열
         self.score = []
 
     def insert(self, info_str):
