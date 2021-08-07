@@ -29,13 +29,7 @@ def dijkstra(n, s, min_fares):
         min_fares[s][v] = min_fares[v][s] = min(min_fares[s][v], li[v])
 
 
-
-def solution():
-    n = 7
-    s = 3
-    a = 4
-    b = 1
-    fares = [[5, 7, 9], [4, 6, 4], [3, 6, 1], [3, 2, 3], [2, 1, 6]]
+def solution(n, s, a, b, fares):
     answer = 0
     min_fares = [[1e9] * (n + 1) for _ in range(n + 1)]
 
@@ -57,6 +51,3 @@ def solution():
         answer = min(answer, min_fares[s][stop] + min_fares[stop][a] + min_fares[stop][b])
 
     return answer
-
-
-solution()
