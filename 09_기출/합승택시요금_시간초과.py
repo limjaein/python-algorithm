@@ -14,13 +14,17 @@ def solution(n, s, a, b, fares):
     for stop in range(1, n + 1):
         for v1 in range(1, n + 1):
             for v2 in range(1, n + 1):
-                min_fares[v1][v2] = min_fares[v2][v1] = min(min_fares[v1][v2], min_fares[v1][stop] + min_fares[stop][v2])
+                if min_fares[v1][v2] > min_fares[v1][stop] + min_fares[stop][v2]:
+                    min_fares[v1][v2] = min_fares[v2][v1] = min_fares[v1][stop] + min_fares[stop][v2]
+                    #min_fares[v1][v2] = min_fares[v2][v1] = min(min_fares[v1][v2], min_fares[v1][stop] + min_fares[stop][v2])
 
     # 각자 가는 경우
     answer = min_fares[s][a] + min_fares[s][b]
 
     # stop 까지 같이 타고가는 경우
     for stop in range(1, n + 1):
-        answer = min(answer, min_fares[s][stop] + min_fares[stop][a] + min_fares[stop][b])
+        if answer > min_fares[s][stop] + min_fares[stop][a] + min_fares[stop][b]:
+            answer = min_fares[s][stop] + min_fares[stop][a] + min_fares[stop][b]
+            #answer = min(answer, min_fares[s][stop] + min_fares[stop][a] + min_fares[stop][b])
 
     return answer
