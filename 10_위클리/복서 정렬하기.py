@@ -69,3 +69,5 @@ def solution(weights, head2head):
         answer.append(boxer.num)
 
     return answer
+
+solution([50,82,75,120]	,["NLWL","WNLL","LWNW","WWLN"]	)
